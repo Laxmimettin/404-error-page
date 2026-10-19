@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top,
+            #1e2a78 0%,
+            #10143c 40%,
+            #070b1d 100%);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    overflow-x: hidden;
+}
+
+.error-container {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1s ease both;
+}
+
+.illustration {
+    position: relative;
+    width: 230px;
+    height: 190px;
+    margin: 0 auto 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.planet {
+    position: relative;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #83e8ff, #6578ff 65%, #a45bff);
+    box-shadow: 0 0 35px #6578ff88;
+    z-index: 2;
+    animation: float 3s ease-in-out infinite;
+}
+
+.crater {
+    position: absolute;
+    border-radius: 50%;
+    background: #4854b8;
+    opacity: 0.65;
+}
+
+.crater-one {
+    width: 24px;
+    height: 24px;
+    top: 25px;
+    left: 27px;
+}
+
+.crater-two {
+    width: 15px;
+    height: 15px;
+    right: 24px;
+    top: 58px;
+}
+
+.crater-three {
+    width: 12px;
+    height: 12px;
+    left: 44px;
+    bottom: 20px;
+}
+
+.orbit {
+    position: absolute;
+    width: 210px;
+    height: 75px;
+    border: 2px solid #a2aaff;
+    border-radius: 50%;
+    transform: rotate(-25deg);
+}
+
+.orbit-one {
+    z-index: 3;
+}
+
+.orbit-two {
+    width: 190px;
+    height: 65px;
+    border-color: #65e8ff55;
+    transform: rotate(35deg);
+}
+
+.star {
+    position: absolute;
+    color: #ffe58f;
+    animation: twinkle 1.8s ease-in-out infinite alternate;
+}
+
+.star-one {
+    top: 10px;
+    left: 15px;
+    font-size: 26px;
+}
+
+.star-two {
+    top: 35px;
+    right: 10px;
+    font-size: 32px;
+    animation-delay: 0.5s;
+}
+
+.star-three {
+    bottom: 12px;
+    right: 35px;
+    font-size: 20px;
+    animation-delay: 1s;
+}
+
+h1 {
+    font-size: clamp(5rem, 18vw, 9rem);
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 8px;
+    background: linear-gradient(90deg, #71e5ff, #a7a0ff, #ff9fe7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 8px 40px #779aff22;
+}
+
+h2 {
+    font-size: clamp(1.3rem, 4vw, 2rem);
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 14px;
+}
+
+p {
+    max-width: 480px;
+    margin: 0 auto;
+    color: #b8c1e3;
+    font-size: 0.98rem;
+    line-height: 1.8;
+}
+
+.home-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    background: linear-gradient(100deg, #6578ff, #a45bff);
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 8px 25px #6578ff40;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px #6578ff70;
+}
+
+.home-button:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 5px;
+}
+
+.footer-text {
+    margin-top: 45px;
+    color: #7884ad;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .illustration {
+        transform: scale(0.85);
+        margin-bottom: 0;
+    }
+
+    h1 {
+        letter-spacing: 4px;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .footer-text {
+        margin-top: 35px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
